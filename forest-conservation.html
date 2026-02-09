@@ -1,0 +1,392 @@
+<!--color palette: #14181A, #CDDCE3, #319905, #0A4B39-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nature Blog</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <style>
+      .navbar-bg {
+        background-color: #14181a;
+      }
+
+      .navbar-bg .navbar-brand,
+      .navbar-bg .nav-link,
+      .navbar-bg .nav-link.active,
+      .navbar-bg .nav-link.show {
+        color: #cddce3;
+      }
+
+      .navbar-bg .nav-link:hover,
+      .navbar-bg .nav-link:focus,
+      .navbar-bg .navbar-brand:hover,
+      .navbar-bg .navbar-brand:focus {
+        color: #fff;
+      }
+
+      .navbar-bg .navbar-toggler {
+        border-color: #cddce3;
+      }
+      .navbar-bg .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23cddce3' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+
+      .carousel-item {
+        height: 75vh;
+      }
+      .carousel-item img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .FeaturedHeading {
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 1.2rem;
+        font-weight: bold;
+        color: #0a4b39;
+      }
+
+      @media (max-width: 991px) {
+        .offcanvas-body .btn-danger {
+          margin-top: 0.5rem;
+        }
+      }
+
+      .article-hero-img {
+        max-width: 560px;
+        width: 100%;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-bg px-2"
+      aria-label="Offcanvas navbar large"
+    >
+      <div class="container-fluid px-2">
+        <a class="navbar-brand" href="#">NatureNest</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar2"
+          aria-controls="offcanvasNavbar2"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end text-bg-dark"
+          tabindex="-1"
+          id="offcanvasNavbar2"
+          aria-labelledby="offcanvasNavbar2Label"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbar2Label">
+              NatureNest
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./articles.html">Articles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./contact-us.html">Contact Us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Categories
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Wildlife</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Plants & Flowers</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Conservation</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex mt-3 mt-lg-0" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-success" type="submit">Search</button>
+            </form>
+            <button
+              type="button"
+              class="btn btn-danger ms-2"
+              data-bs-toggle="modal"
+              data-bs-target="#SignInModal"
+            >
+              SignIn
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger ms-2"
+              data-bs-toggle="modal"
+              data-bs-target="#SignUpModal"
+            >
+              SignUp
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!--SignIn Modal -->
+    <div
+      class="modal fade"
+      id="SignInModal"
+      tabindex="-1"
+      aria-labelledby="SignInModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="SignInModalLabel">Sign In</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                  >Email address</label
+                >
+                <input
+                  type="email"
+                  class="form-control form-control-lg"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp1"
+                />
+                <div id="emailHelp1" class="form-text">
+                  We'll never share your email with anyone else.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  class="form-control form-control-lg"
+                  id="exampleInputPassword1"
+                />
+              </div>
+              <div class="mb-3 form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="exampleCheck1"
+                />
+                <label class="form-check-label" for="exampleCheck1"
+                  >Check me out</label
+                >
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!--SignUp Modal -->
+    <div
+      class="modal fade"
+      id="SignUpModal"
+      tabindex="-1"
+      aria-labelledby="SignUpModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="SignUpModalLabel">Sign Up</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label for="firstName" class="form-label">First name</label>
+                  <input
+                    type="text"
+                    class="form-control form-control-lg"
+                    id="firstName"
+                    placeholder="First name"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="lastName" class="form-label">Last name</label>
+                  <input
+                    type="text"
+                    class="form-control form-control-lg"
+                    id="lastName"
+                    placeholder="Last name"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail2" class="form-label"
+                  >Email address</label
+                >
+                <input
+                  type="email"
+                  class="form-control form-control-lg"
+                  id="exampleInputEmail2"
+                  aria-describedby="emailHelp2"
+                />
+                <div id="emailHelp2" class="form-text">
+                  We'll never share your email with anyone else.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword2" class="form-label"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  class="form-control form-control-lg"
+                  id="exampleInputPassword2"
+                />
+              </div>
+              <div class="mb-3 form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="exampleCheck2"
+                />
+                <label class="form-check-label" for="exampleCheck2"
+                  >Check me out</label
+                >
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container col-xxl-8 px-4 py-5">
+      <div class="row align-items-start g-5 py-5">
+        <div class="col-12 col-lg-5 order-lg-2">
+          <img
+            src="./assets/card1.jpg"
+            class="d-block ms-lg-auto img-fluid rounded article-hero-img"
+            alt="Forest Conservation"
+            width="700"
+            height="500"
+            loading="lazy"
+          />
+        </div>
+        <div class="col-12 col-lg-7 order-lg-1">
+          <h1 class="display-5 fw-bold lh-1 mb-3">Forest Conservation</h1>
+          <p class="lead">
+            Forests regulate climate, clean our air, and shelter most of the
+            world’s land‑based biodiversity. Protecting them is one of the most
+            effective ways to safeguard water sources, reduce erosion, and
+            support communities that depend on forest resources.
+          </p>
+          <p>
+            Conservation starts with reducing deforestation, restoring degraded
+            land, and supporting sustainable forestry. Practical actions include
+            choosing certified wood products, minimizing paper waste, and
+            planting native trees to rebuild habitats.
+          </p>
+          <p>
+            Local efforts matter. Community‑led forest monitoring, eco‑tourism,
+            and education programs help protect wildlife corridors and prevent
+            illegal logging. Together, small steps add up to a healthier, more
+            resilient planet.
+          </p>
+          <p>
+            Healthy forests also store massive amounts of carbon. When forests
+            are cleared or burned, that carbon is released into the atmosphere,
+            accelerating climate change. Protecting intact forests is therefore
+            one of the fastest ways to slow warming while we transition to
+            cleaner energy.
+          </p>
+          <p>
+            If you want to help, start local: join tree‑planting drives, support
+            conservation groups, and choose products from brands that commit to
+            deforestation‑free supply chains. Every purchase and volunteer hour
+            sends a signal that healthy forests are worth protecting.
+          </p>
+          <a href="./index.html" class="btn btn-success mt-2">Back to Home</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item">
+          <a href="#" class="nav-link px-2 text-body-secondary">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link px-2 text-body-secondary">Features</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link px-2 text-body-secondary">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link px-2 text-body-secondary">FAQs</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link px-2 text-body-secondary">About</a>
+        </li>
+      </ul>
+      <p class="text-center text-body-secondary">© 2025 Company, Inc</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
